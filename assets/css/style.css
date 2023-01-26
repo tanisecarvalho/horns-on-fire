@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: black;
+    background: #000000 url("../images/background.png") repeat center center;
     color: white;
     font-family: 'Raleway', sans-serif;
     font-size: 1.5rem;
