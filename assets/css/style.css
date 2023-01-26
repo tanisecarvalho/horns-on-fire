@@ -13,8 +13,42 @@ body {
     color: white;
     font-family: 'Raleway', sans-serif;
     font-size: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2 {
   font-family: 'New Rocker', cursive;
+}
+
+section {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  background-color: black;
+}
+
+footer p {
+  font-size: 1rem;
+  padding: 0 .5rem;
+}
+
+footer a {
+  text-decoration: none;
+  letter-spacing: 10px;
+}
+
+footer i {
+  color:#E2DCD8;
 }
