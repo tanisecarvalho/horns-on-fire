@@ -77,6 +77,17 @@ section {
   gap: 1rem;
 }
 
+.input {
+  height: 40px;
+  width: 200px;
+  border: 5px solid #171717;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #F1473A;
+}
+
 #rules {
   background-color: #171717;
 }
