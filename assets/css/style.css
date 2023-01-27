@@ -88,6 +88,17 @@ section {
   color: #F1473A;
 }
 
+.button {
+  height: 50px;
+  width: 150px;
+  background-color: #F79326;
+  border: 3px solid #171717;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-family: 'New Rocker', cursive;
+  letter-spacing: 4px;
+}
+
 #rules {
   background-color: #171717;
 }
