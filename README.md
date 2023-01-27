@@ -151,7 +151,18 @@ HTML, CSS & JavaScript.
 
 ### Frameworks, Libraries & Programs Used
 
+add the links and for what I used them
 
+* Git
+* GitHub
+* GitPod
+* GitHub Pages
+* Favicon
+* Canva
+* Balsamiq
+* Google Fonts
+* Font Awesome
+* Coolors
 
 ## Deployment & Local Development
 
