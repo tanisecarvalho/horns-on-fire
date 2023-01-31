@@ -34,19 +34,34 @@
   </header>
 
   <!-- main section -->
-  <section>
+  <section id="game-section">
 
-    <div class="container">
+    <div class="container" id="start-game">
 
-      <div id="game" class="main-game">
+      <div class="main-game">
         <input type="text" id="name" name="name" class="input" placeholder="Enter your name">
-        <input type="button" value="Start" class="button">
+        <input type="button" value="Start" class="button" id="start" onclick="start()">
         <input type="button" value="Rules" class="button">
       </div>        
   
       <div id="rules" class="main-game">
         <h3>Rules</h3>
         <p>Text here explaining the rules</p>
+      </div>
+
+    </div>
+
+    <div class="container" id="questions-game">
+      
+      <h2 id="question"></h2>
+
+      <div id="options" class="main-game">
+      </div>    
+
+      <div class="game-controls">
+        <input type="button" value="Restart" class="button" id="restart">
+        <input type="button" value="Previous" class="button" id="previous">
+        <input type="button" value="Next" class="button" id="next">
       </div>
 
     </div>

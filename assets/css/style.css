@@ -99,6 +99,10 @@ section {
   letter-spacing: 4px;
 }
 
+#questions-game {
+  display: none;
+}
+
 #rules {
   background-color: #171717;
 }
