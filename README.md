@@ -121,6 +121,14 @@ All the wireframes were created using [Balsamiq](https://balsamiq.com/).
 </details>
 
 <details>
+  <summary> Tablet </summary>
+
+  <br>
+
+  Create wireframes for tablet
+</details>
+
+<details>
   <summary> Mobile </summary>
 
   <br>
