@@ -24,3 +24,8 @@ function nextQuestion() {
   currentQuestion++;
   loadQuestion();
 }
+
+function previousQuestion() {
+  currentQuestion--;
+  loadQuestion();
+}
