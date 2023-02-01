@@ -1,5 +1,6 @@
 console.log(hardRock);
 let currentQuestion = 0;
+let score = 0;
 
 function startGame() {
   let username = document.getElementById("name").value;
@@ -22,12 +23,17 @@ function loadQuestion() {
   } else {
     document.getElementById("previous").removeAttribute("disabled");
   }
+
+  if(currentQuestion > 0 || score > 0) {
+    document.getElementById("score").innerHTML = "Score: " + score;
+  }
   document.getElementById("question").innerHTML = hardRock[currentQuestion].question;
   let options = document.getElementById("options");
   options.innerHTML = "";
   for (let opt of hardRock[currentQuestion].options) {
     let optButton = document.createElement("input");
     optButton.type = "button";
+    optButton.setAttribute("class", "options");
     optButton.value = opt;
     options.appendChild(optButton);
   }
@@ -55,6 +61,7 @@ function restartGame() {
   document.getElementById("finish").style.display = "none";
   document.getElementById("next").style.display = "initial";
   currentQuestion = 0;
+  score = 0;
   loadQuestion();
 }
 

@@ -211,7 +211,10 @@ Please check the [TESTING.md](TESTING.md) file for all the tests.
 
 * [This code](https://cssdeck.com/blog/create-a-burning-text-effect-with-css3/) was used and adapted to create the burning effect on the quiz name.
 
+* [Emoji Cursor](https://www.emojicursor.app/) was used to change the cursor to 🤘 when mouse hovering the answer options.
+
 * I used [Kera Cudmore](https://github.com/kera-cudmore/readme-examples) tutorial to improve my README.md file.
+
 
 ### Content
 
