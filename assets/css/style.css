@@ -101,6 +101,7 @@ section {
 
 #questions-game {
   display: none;
+  text-align: center;
 }
 
 #rules {
