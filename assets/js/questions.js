@@ -16,7 +16,7 @@ const hardRock = [
     "correct": "Mick Mars"
   },
   {
-    "question": "Woke up to the sound of pouring rain... This is the beginning of which Skid Row song?",
+    "question": "<em>Woke up to the sound of pouring rain...</em> This is the beginning of which Skid Row song?",
     "options": ["In A Darkened Room", "Quicksand Jesus", "I Remember You", "Wasted Time"],
     "correct": "I Remember You"
   },

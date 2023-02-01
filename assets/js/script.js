@@ -2,10 +2,18 @@ console.log(hardRock);
 let currentQuestion = 0;
 
 function startGame() {
-  document.getElementById("start-game").style.display = "none";
-  document.getElementById("questions-game").style.display = "flex";
+  let username = document.getElementById("name").value;
 
-  loadQuestion();
+  if(username === "") {
+    alert("A name must be informed to start the game");
+  } else {
+    document.getElementById("username").innerHTML = username;
+    document.getElementById("start-game").style.display = "none";
+    document.getElementById("questions-game").style.display = "flex";
+
+    loadQuestion();
+  }
+  
 }
 
 function loadQuestion() {
