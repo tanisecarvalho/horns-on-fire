@@ -104,6 +104,10 @@ section {
   text-align: center;
 }
 
+#finish {
+  display: none;
+}
+
 #rules {
   background-color: #171717;
 }

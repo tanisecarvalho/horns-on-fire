@@ -40,7 +40,7 @@
 
       <div class="main-game">
         <input type="text" id="name" name="name" class="input" placeholder="Enter your name">
-        <input type="button" value="Start" class="button" id="start" onclick="start()">
+        <input type="button" value="Start" class="button" id="start" onclick="startGame()">
         <input type="button" value="Rules" class="button">
       </div>        
   
@@ -59,9 +59,10 @@
       </div>    
 
       <div class="game-controls">
-        <input type="button" value="Restart" class="button" id="restart">
+        <input type="button" value="Restart" class="button" id="restart" onclick="restartGame()">
         <input type="button" value="Previous" class="button" id="previous" onclick="previousQuestion()">
         <input type="button" value="Next" class="button" id="next" onclick="nextQuestion()">
+        <input type="button" value="Finish" class="button" id="finish" onclick="finishGame()">
       </div>
 
     </div>
