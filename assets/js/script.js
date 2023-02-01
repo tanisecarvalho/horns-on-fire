@@ -65,9 +65,30 @@ function restartGame() {
 }
 
 function finishGame() {
-  alert("End of game");
+  document.getElementById("questions-game").style.display = "none";
+
+  let resultMessage = document.getElementById("result-message");
+  let resultImage = document.getElementById("result-image");
+
+  if(score >= 0 && score <= 1) {
+    resultMessage.innerHTML = "I think you might have misunderstood the type of rock we are talking about.";
+    resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
+  } else if (score > 1 && score <= 3) {
+    resultMessage.innerHTML = "As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.";
+    resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
+  } else {
+    resultMessage.innerHTML = "Well, well... We have a rockstar here. Congratualations!";
+    resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
+  }
+
+  document.getElementById("finish-game").style.display = "flex";
 }
 
+function newGame() {
+  document.getElementById("finish-game").style.display = "none";
+  document.getElementById("start-game").style.display = "flex";
+  restartGame();
+}
 function updateScore() {
 
   document.getElementById("score").innerHTML = "Score: " + score + "/" + hardRock.length;

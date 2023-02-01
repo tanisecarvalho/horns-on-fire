@@ -36,7 +36,7 @@ h1, h3 {
   letter-spacing: 5px;
 }
 
-h2 {
+h2, h4 {
   letter-spacing: 4px;
 }
 
@@ -103,6 +103,22 @@ section {
 #questions-game {
   display: none;
   text-align: center;
+}
+
+#finish-game {
+  display: none;
+  text-align: center;
+}
+
+#result-image {
+  width: 256px;
+  height: 256px;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+#new-game {
+  font-size: 1.4rem;
 }
 
 .options {
