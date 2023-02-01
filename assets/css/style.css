@@ -135,6 +135,14 @@ section {
   background-color: #171717;
 }
 
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
 /* footer */
 
 footer {

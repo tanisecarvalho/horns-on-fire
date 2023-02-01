@@ -24,9 +24,6 @@ function loadQuestion() {
     document.getElementById("previous").removeAttribute("disabled");
   }
 
-  if(currentQuestion > 0 || score > 0) {
-    document.getElementById("score").innerHTML = "Score: " + score;
-  }
   document.getElementById("question").innerHTML = hardRock[currentQuestion].question;
   let options = document.getElementById("options");
   options.innerHTML = "";
@@ -34,6 +31,7 @@ function loadQuestion() {
     let optButton = document.createElement("input");
     optButton.type = "button";
     optButton.setAttribute("class", "options");
+    optButton.setAttribute("onclick", "checkAnswer(this)");
     optButton.value = opt;
     options.appendChild(optButton);
   }
@@ -62,9 +60,27 @@ function restartGame() {
   document.getElementById("next").style.display = "initial";
   currentQuestion = 0;
   score = 0;
+  document.getElementById("score").innerHTML = "Are you ready to rock?";
   loadQuestion();
 }
 
 function finishGame() {
   alert("End of game");
+}
+
+function updateScore() {
+
+  document.getElementById("score").innerHTML = "Score: " + score + "/" + hardRock.length;
+
+}
+
+function checkAnswer(answer) {
+  if(answer.value === hardRock[currentQuestion].correct) {
+    answer.classList.add("correct");
+    score++;
+  } else {
+    answer.classList.add("incorrect");
+  }
+
+  updateScore();
 }
