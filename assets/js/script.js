@@ -9,6 +9,11 @@ function startGame() {
 }
 
 function loadQuestion() {
+  if(currentQuestion === 0) {
+    document.getElementById("previous").setAttribute("disabled", "");
+  } else {
+    document.getElementById("previous").removeAttribute("disabled");
+  }
   document.getElementById("question").innerHTML = hardRock[currentQuestion].question;
   let options = document.getElementById("options");
   options.innerHTML = "";
@@ -39,6 +44,8 @@ function previousQuestion() {
 }
 
 function restartGame() {
+  document.getElementById("finish").style.display = "none";
+  document.getElementById("next").style.display = "initial";
   currentQuestion = 0;
   loadQuestion();
 }
