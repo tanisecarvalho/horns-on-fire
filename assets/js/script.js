@@ -1,18 +1,23 @@
-console.log(hardRock);
+let leaderboard = localStorage.leaderboard;
 let currentQuestion = 0;
-let score = 0;
+
+const score = {
+  "name": "",
+  "points": 0
+};
+
 let currentGame = [];
 
 function startGame() {
   for (let i in hardRock) {
     currentGame[i] = null;
   }
-  let username = document.getElementById("name").value;
+  score.name = document.getElementById("name").value;
 
-  if(username === "") {
+  if(score.name === "") {
     alert("A name must be informed to start the game");
   } else {
-    document.getElementById("username").innerHTML = username;
+    document.getElementById("username").innerHTML = score.name;
     document.getElementById("start-game").style.display = "none";
     document.getElementById("questions-game").style.display = "flex";
 
@@ -70,7 +75,7 @@ function restartGame() {
   document.getElementById("questions-game").style.display = "none";
   document.getElementById("start-game").style.display = "flex";
   currentQuestion = 0;
-  score = 0;
+  score.points = 0;
   currentGame = [];
   document.getElementById("score").innerHTML = "Are you ready to rock?";
   loadQuestion();
@@ -82,10 +87,10 @@ function finishGame() {
   let resultMessage = document.getElementById("result-message");
   let resultImage = document.getElementById("result-image");
 
-  if(score >= 0 && score <= 1) {
+  if(score.points >= 0 && score.points <= 1) {
     resultMessage.innerHTML = "I think you might have misunderstood the type of rock we are talking about.";
     resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
-  } else if (score > 1 && score <= 3) {
+  } else if (score.points > 1 && score.points <= 3) {
     resultMessage.innerHTML = "As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.";
     resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
   } else {
@@ -93,12 +98,14 @@ function finishGame() {
     resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
   }
 
+  saveLeaderboard();
+
   document.getElementById("finish-game").style.display = "flex";
 }
 
 function updateScore() {
 
-  document.getElementById("score").innerHTML = "Score: " + score + "/" + hardRock.length;
+  document.getElementById("score").innerHTML = "Score: " + score.points + "/" + hardRock.length;
 
 }
 
@@ -106,7 +113,7 @@ function checkAnswer(answer) {
   saveCurrentGame(answer.value);
   displayAnswer();
   if(answer.value === hardRock[currentQuestion].correct) {
-    score++;
+    score.points++;
   }
   updateScore();
 }
@@ -132,19 +139,50 @@ function displayAnswer() {
 }
 
 function showRules(show) {
-  let rules = document.getElementById("rules");
+  let rulesDisplay = document.getElementById("rules");
   if(show) {
-    rules.style.display = "flex";
+    rulesDisplay.style.display = "flex";
   } else {
-    rules.style.display = "none";
+    rulesDisplay.style.display = "none";
   }
 }
 
 function showLeaderboard(show) {
-  let leaderboard = document.getElementById("leaderboard");
+  let leaderboardDisplay = document.getElementById("leaderboard");
   if(show) {
-    leaderboard.style.display = "flex";
+    leaderboardDisplay.style.display = "flex";
+    loadLeaderboard();
   } else {
-    leaderboard.style.display = "none";
+    leaderboardDisplay.style.display = "none";
+  }
+}
+
+function saveLeaderboard() {
+  let currentLeaderboard = [];
+
+  if (leaderboard !== undefined) {
+    currentLeaderboard = JSON.parse(leaderboard);
+  }
+
+  currentLeaderboard.push(score);
+  localStorage.setItem("leaderboard", JSON.stringify(currentLeaderboard));
+  leaderboard = localStorage.leaderboard;
+}
+
+function loadLeaderboard() {
+  if (leaderboard !== undefined) {
+    let currentLeaderboard = JSON.parse(leaderboard);
+    let leaderboardResults = document.getElementById("leaderboard-results");
+    leaderboardResults.innerHTML = "";
+    for (let result of currentLeaderboard) {
+      let resultTr = document.createElement("tr");
+      let resultName = document.createElement("td");
+      let resultScore = document.createElement("td");
+      resultName.innerHTML = result.name;
+      resultScore.innerHTML = result.points;
+      resultTr.appendChild(resultName);
+      resultTr.appendChild(resultScore);
+      leaderboardResults.appendChild(resultTr);
+    }
   }
 }
