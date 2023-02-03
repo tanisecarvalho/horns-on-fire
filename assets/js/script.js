@@ -105,8 +105,8 @@ function updateScore() {
 }
 
 function checkAnswer(answer) {
-  displayAnswer();
   saveCurrentGame(answer.value);
+  displayAnswer();
   if(answer.value === hardRock[currentQuestion].correct) {
     score++;
   }
@@ -125,6 +125,10 @@ function displayAnswer() {
       option.classList.add("correct");
     } else {
       option.classList.add("incorrect");
+    }
+
+    if(option.value === currentGame[currentQuestion]) {
+      option.classList.add("selected");
     }
   }
 }

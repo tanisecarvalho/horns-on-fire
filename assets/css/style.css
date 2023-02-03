@@ -159,6 +159,10 @@ section {
   background-color: red;
 }
 
+.selected {
+  border: 5px dotted #F79326;
+}
+
 /* footer */
 
 footer {
