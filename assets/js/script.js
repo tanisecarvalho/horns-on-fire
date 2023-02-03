@@ -1,8 +1,12 @@
 console.log(hardRock);
 let currentQuestion = 0;
 let score = 0;
+let currentGame = [];
 
 function startGame() {
+  for (let i in hardRock) {
+    currentGame[i] = null;
+  }
   let username = document.getElementById("name").value;
 
   if(username === "") {
@@ -35,6 +39,10 @@ function loadQuestion() {
     optButton.value = opt;
     options.appendChild(optButton);
   }
+
+  if(currentGame[currentQuestion] !== null) {
+    displayAnswer();
+  }
 }
 
 function nextQuestion() {
@@ -60,6 +68,7 @@ function restartGame() {
   document.getElementById("next").style.display = "initial";
   currentQuestion = 0;
   score = 0;
+  currentGame = [];
   document.getElementById("score").innerHTML = "Are you ready to rock?";
   loadQuestion();
 }
@@ -96,12 +105,26 @@ function updateScore() {
 }
 
 function checkAnswer(answer) {
+  displayAnswer();
+  saveCurrentGame(answer.value);
   if(answer.value === hardRock[currentQuestion].correct) {
-    answer.classList.add("correct");
     score++;
-  } else {
-    answer.classList.add("incorrect");
   }
-
   updateScore();
+}
+
+function saveCurrentGame(choice) {
+  currentGame[currentQuestion] = choice;
+}
+
+function displayAnswer() {
+  let options = document.getElementsByClassName("options");
+  for (let option of options) {
+    option.setAttribute("disabled", "");
+    if(option.value === hardRock[currentQuestion].correct) {
+      option.classList.add("correct");
+    } else {
+      option.classList.add("incorrect");
+    }
+  }
 }
