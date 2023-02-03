@@ -42,6 +42,7 @@
         <input type="text" id="name" name="name" class="input" placeholder="Enter your name">
         <input type="button" value="Start" class="button" id="start" onclick="startGame()">
         <input type="button" value="Rules" class="button" onclick="showRules(true)">
+        <input type="button" value="Leaderboard" class="button" onclick="showLeaderboard(true)">
       </div>        
   
       <div id="rules" class="main-game">
@@ -54,6 +55,25 @@
         <p>Read your result message</p>
         <p>Choose between start a New Game or see the Leaderboard</p>
         <input type="button" value="Close" class="button" onclick="showRules(false)">
+      </div>
+
+      <div id="leaderboard" class="main-game">
+        <h3>Leaderboard</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-results">
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="button" value="Close" class="button" onclick="showLeaderboard(false)">
       </div>
 
     </div>

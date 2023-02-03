@@ -139,3 +139,12 @@ function showRules(show) {
     rules.style.display = "none";
   }
 }
+
+function showLeaderboard(show) {
+  let leaderboard = document.getElementById("leaderboard");
+  if(show) {
+    leaderboard.style.display = "flex";
+  } else {
+    leaderboard.style.display = "none";
+  }
+}
