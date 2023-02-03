@@ -66,6 +66,9 @@ function previousQuestion() {
 function restartGame() {
   document.getElementById("finish").style.display = "none";
   document.getElementById("next").style.display = "initial";
+  document.getElementById("finish-game").style.display = "none";
+  document.getElementById("questions-game").style.display = "none";
+  document.getElementById("start-game").style.display = "flex";
   currentQuestion = 0;
   score = 0;
   currentGame = [];
@@ -93,11 +96,6 @@ function finishGame() {
   document.getElementById("finish-game").style.display = "flex";
 }
 
-function newGame() {
-  document.getElementById("finish-game").style.display = "none";
-  document.getElementById("start-game").style.display = "flex";
-  restartGame();
-}
 function updateScore() {
 
   document.getElementById("score").innerHTML = "Score: " + score + "/" + hardRock.length;
@@ -130,5 +128,14 @@ function displayAnswer() {
     if(option.value === currentGame[currentQuestion]) {
       option.classList.add("selected");
     }
+  }
+}
+
+function showRules(show) {
+  let rules = document.getElementById("rules");
+  if(show) {
+    rules.style.display = "flex";
+  } else {
+    rules.style.display = "none";
   }
 }

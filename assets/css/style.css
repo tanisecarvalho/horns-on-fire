@@ -148,7 +148,11 @@ section {
 }
 
 #rules {
+  display: none;
   background-color: #171717;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .correct {

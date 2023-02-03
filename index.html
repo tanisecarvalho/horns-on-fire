@@ -41,12 +41,19 @@
       <div class="main-game">
         <input type="text" id="name" name="name" class="input" placeholder="Enter your name">
         <input type="button" value="Start" class="button" id="start" onclick="startGame()">
-        <input type="button" value="Rules" class="button">
+        <input type="button" value="Rules" class="button" onclick="showRules(true)">
       </div>        
   
       <div id="rules" class="main-game">
         <h3>Rules</h3>
-        <p>Text here explaining the rules</p>
+        <p>Enter Your Name</p>
+        <p>Click Start</p>
+        <p>Select your answer</p>
+        <p>Go to the next question and repeat until you reach the last question</p>
+        <p>Answer it and click Finish</p>
+        <p>Read your result message</p>
+        <p>Choose between start a New Game or see the Leaderboard</p>
+        <input type="button" value="Close" class="button" onclick="showRules(false)">
       </div>
 
     </div>
@@ -79,7 +86,7 @@
       <div id="result-image"></div>
 
       <div class="game-controls">
-        <input type="button" value="New Game" class="button" id="new-game" onclick="newGame()">
+        <input type="button" value="New Game" class="button" id="new-game" onclick="restartGame()">
       </div>
 
     </div>
