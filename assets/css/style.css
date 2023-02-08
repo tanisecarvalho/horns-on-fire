@@ -18,6 +18,8 @@ body {
     flex-direction: column;
 }
 
+/* header & headings */
+
 header {
   display: flex;
   flex-direction: column;
@@ -25,6 +27,10 @@ header {
   justify-content: center;
   padding: 1rem;
   text-align: center;
+}
+
+#logo {
+  border-radius: 50%;
 }
 
 #title-div {
@@ -42,23 +48,21 @@ h3 {
   font-size: 2rem;
 }
 
-h4 {
-  font-size: 1.5rem;
-}
-
 h2, h4 {
   letter-spacing: 4px;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 #title {
   font-size: 5rem;
   color: #F1473A;
-  text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px         #F90, 0px -20px 40px #C33;
+  text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px #F90, 0px -20px 40px #C33;
 }
 
-#logo {
-  border-radius: 50%;
-}
+/* section */
 
 section {
   display: flex;
@@ -67,6 +71,8 @@ section {
   justify-content: center;
   width: 100%;
 }
+
+/* main container of the game where all the game is loaded */
 
 .container {
   display: flex;
@@ -82,23 +88,29 @@ section {
   gap: 1rem;
 }
 
+/* divs where the game are loaded not visible at the start */
+
+#questions-game, #finish-game {
+  display: none;
+  text-align: center;
+}
+
+#rules, #leaderboard {
+  display: none;
+  background-color: #171717;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* main classes to organise the content load on the main container */
+
 .main-game {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin: 1rem 0;
-}
-
-.input {
-  height: 40px;
-  width: 200px;
-  border: 5px solid #171717;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 1.2rem;
-  text-align: center;
-  color: #F1473A;
 }
 
 .button {
@@ -111,24 +123,27 @@ section {
   font-family: 'New Rocker', cursive;
   letter-spacing: 4px;
   color: #171717;
-}
-
-#questions-game {
-  display: none;
   text-align: center;
 }
 
-#finish-game {
+#finish {
   display: none;
-  text-align: center;
 }
 
-#result-image {
-  width: 256px;
-  height: 256px;
+/* START GAME */
+
+.input {
+  height: 40px;
+  width: 200px;
+  border: 5px solid #171717;
   border-radius: 5px;
-  background-size: cover;
+  padding: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #F1473A;
 }
+
+/* QUESTIONS LOADED */
 
 .options {
   font-size: 1.2rem;
@@ -147,8 +162,16 @@ section {
   cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🤘</text></svg>") 16 0,auto; 
 }
 
-#finish {
-  display: none;
+.correct {
+  background-color: #008000;
+}
+
+.incorrect {
+  background-color: #ff0000;
+}
+
+.selected {
+  border: 5px solid #171717;
 }
 
 .game-controls {
@@ -157,24 +180,13 @@ section {
   gap: 1rem;
 }
 
-#rules, #leaderboard {
-  display: none;
-  background-color: #171717;
-  padding: 2rem;
+/* RESULT */
+
+#result-image {
+  width: 256px;
+  height: 256px;
   border-radius: 5px;
-  text-align: center;
-}
-
-.correct {
-  background-color: green;
-}
-
-.incorrect {
-  background-color: red;
-}
-
-.selected {
-  border: 5px solid #171717;
+  background-size: cover;
 }
 
 /* footer */
@@ -203,6 +215,7 @@ footer i {
   color:#EDEDED;
 }
 
+/* media queries */
 
 @media screen and (min-width:768px) {
   body {

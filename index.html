@@ -36,8 +36,10 @@
   <!-- main section -->
   <section id="game-section">
 
+    <!-- container with the initial screen for the game -->
     <div class="container" id="start-game">
 
+      <!-- div where the game starts with input text for name and buttons -->
       <div class="main-game">
         <input type="text" id="name" name="name" class="input" placeholder="Enter your name">
         <input type="button" value="Start" class="button" id="start" onclick="startGame()">
@@ -45,6 +47,7 @@
         <input type="button" value="Leaderboard" class="button" onclick="showLeaderboard(true)">
       </div>        
   
+      <!-- div for the rules of the game -->
       <div id="rules" class="main-game">
         <h3>Rules</h3>
         <p>Enter Your Name</p>
@@ -57,6 +60,7 @@
         <input type="button" value="Close" class="button" onclick="showRules(false)">
       </div>
 
+      <!-- div with a table for the leaderboard -->
       <div id="leaderboard" class="main-game">
         <h3>Leaderboard</h3>
         <table>
@@ -78,6 +82,7 @@
 
     </div>
 
+    <!-- container where the questions will be loaded -->
     <div class="container" id="questions-game">
 
       <h3>Welcome <span id="username"></span>!</h3>
@@ -88,6 +93,7 @@
       <div id="options" class="main-game">
       </div>    
 
+      <!-- div with the buttons that control the game -->
       <div class="game-controls">
         <input type="button" value="Restart" class="button" id="restart" onclick="restartGame()">
         <input type="button" value="Previous" class="button" id="previous" onclick="previousQuestion()">
@@ -97,6 +103,7 @@
 
     </div>
 
+    <!-- container with the result -->
     <div class="container" id="finish-game">
 
       <h3>You have finished the game</h3>
