@@ -90,16 +90,8 @@ section {
 
 /* divs where the game are loaded not visible at the start */
 
-#questions-game, #finish-game {
+#questions-game, #finish-game, #rules,  #leaderboard{
   display: none;
-  text-align: center;
-}
-
-#rules, #leaderboard {
-  display: none;
-  background-color: #171717;
-  padding: 2rem;
-  border-radius: 5px;
   text-align: center;
 }
 

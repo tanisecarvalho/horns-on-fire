@@ -195,10 +195,13 @@ function updateScore() {
  */
 function showRules(show) {
   let rulesDisplay = document.getElementById("rules");
-  if(show) {
+  let startDisplay = document.getElementById("start-game");
+  if (show) {
+    startDisplay.style.display = "none";
     rulesDisplay.style.display = "flex";
   } else {
     rulesDisplay.style.display = "none";
+    startDisplay.style.display = "flex";
   }
 }
 
@@ -209,11 +212,14 @@ function showRules(show) {
  */
 function showLeaderboard(show) {
   let leaderboardDisplay = document.getElementById("leaderboard");
-  if(show) {
+  let startDisplay = document.getElementById("start-game");
+  if (show) {
+    startDisplay.style.display = "none";
     leaderboardDisplay.style.display = "flex";
     loadLeaderboard();
   } else {
     leaderboardDisplay.style.display = "none";
+    startDisplay.style.display = "flex";
   }
 }
 
