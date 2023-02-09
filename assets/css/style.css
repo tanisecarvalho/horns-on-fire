@@ -188,6 +188,24 @@ section {
   background-size: cover;
 }
 
+/* LEADERBOARD */
+
+#leaderboard-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#leaderboard-table td, #leaderboard-table th {
+  border: 3px solid #EDEDED;
+  padding: 1rem;
+  letter-spacing: 3px;
+}
+
+#leaderboard-table th {
+  font-family: 'New Rocker', cursive;
+  background-color: #171717;
+}
+
 /* footer */
 
 footer {
