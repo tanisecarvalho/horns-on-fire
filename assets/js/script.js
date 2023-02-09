@@ -20,13 +20,23 @@ function startGame() {
   score.name = document.getElementById("name").value;
 
   if (score.name === "") {
-    alert("A name must be informed to start the game");
+    document.getElementById("message").style.display = "block";
   } else {
     document.getElementById("username").innerHTML = score.name;
     document.getElementById("start-game").style.display = "none";
     document.getElementById("questions-game").style.display = "flex";
 
     loadQuestion();
+  }
+}
+
+/**
+ * Close the span message showed when the user doesn't enter a name
+ */
+function closeMessage() {
+  let messageDisplay = document.getElementById("message");
+  if (messageDisplay.style.display !== "none") {
+    messageDisplay.style.display = "none";
   }
 }
 
@@ -134,7 +144,7 @@ function finishGame() {
     resultMessage.innerHTML = "As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.";
     resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
   } else {
-    resultMessage.innerHTML = "Well, well... We have a rockstar here. Congratualations!";
+    resultMessage.innerHTML = "Well, well... We have a rockstar here. Congratulations!";
     resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
   }
 
@@ -194,6 +204,7 @@ function updateScore() {
  * @param {boolean} show - Boolean to verify if its to show or close the div 
  */
 function showRules(show) {
+  closeMessage();
   let rulesDisplay = document.getElementById("rules");
   let startDisplay = document.getElementById("start-game");
   if (show) {
@@ -211,6 +222,7 @@ function showRules(show) {
  * @param {boolean} show - Boolean to verify if its to show or close the div 
  */
 function showLeaderboard(show) {
+  closeMessage();
   let leaderboardDisplay = document.getElementById("leaderboard");
   let startDisplay = document.getElementById("start-game");
   if (show) {

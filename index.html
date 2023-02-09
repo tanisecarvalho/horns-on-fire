@@ -21,7 +21,7 @@
   <header>
 
       <a href="index.html">
-          <img src="assets/images/logo.png" alt="Logo" width="256" height="256" id="logo">
+          <img src="assets/images/logo.png" alt="Logo" width="128" height="128" id="logo">
       </a>
 
       <div id="title-div">
@@ -41,7 +41,8 @@
 
       <!-- div where the game starts with input text for name and buttons -->
       <div class="main-game">
-        <input type="text" id="name" name="name" class="input" placeholder="Enter your name">
+        <input type="text" id="name" name="name" class="input" placeholder="Enter your name" onfocus="closeMessage()">
+        <span id="message">Hey! We know that the show must go on, but first enter your name to start the game!</span>
         <input type="button" value="Start" class="button" id="start" onclick="startGame()">
         <input type="button" value="Rules" class="button" onclick="showRules(true)">
         <input type="button" value="Leaderboard" class="button" onclick="showLeaderboard(true)">

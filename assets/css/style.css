@@ -90,7 +90,7 @@ section {
 
 /* divs where the game are loaded not visible at the start */
 
-#questions-game, #finish-game, #rules,  #leaderboard{
+#questions-game, #finish-game, #rules,  #leaderboard, #message {
   display: none;
   text-align: center;
 }
@@ -120,6 +120,13 @@ section {
 
 #finish {
   display: none;
+}
+
+#message {
+  font-size: 1rem;
+  background-color: #171717;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 /* START GAME */
@@ -216,6 +223,11 @@ footer i {
 
   header, .game-controls {
       flex-direction: row;
+  }
+
+  #logo {
+    width: 256px;
+    height: 256px;
   }
 
   #title {
