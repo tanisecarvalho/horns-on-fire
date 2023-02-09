@@ -41,8 +41,8 @@
 
       <!-- div where the game starts with input text for name and buttons -->
       <div class="main-game">
-        <input type="text" id="name" name="name" class="input" placeholder="Enter your name" onfocus="closeMessage()">
-        <span id="message">Hey! We know that the show must go on, but first enter your name to start the game!</span>
+        <input type="text" id="name" name="name" class="input" placeholder="Enter your name" onfocus="closeMessage('message')">
+        <span id="message" class="messages">Hey! We know that the show must go on, but first enter your name to start the game!</span>
         <input type="button" value="Start" class="button" id="start" onclick="startGame()">
         <input type="button" value="Rules" class="button" onclick="showRules(true)">
         <input type="button" value="Leaderboard" class="button" onclick="showLeaderboard(true)">
@@ -99,6 +99,8 @@
 
       <div id="options" class="main-game">
       </div>    
+
+      <span id="finish-message" class="messages">Not so fast! To finish the game you must answer all the questions first.</span>
 
       <!-- div with the buttons that control the game -->
       <div class="game-controls">

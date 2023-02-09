@@ -33,8 +33,8 @@ function startGame() {
 /**
  * Close the span message showed when the user doesn't enter a name
  */
-function closeMessage() {
-  let messageDisplay = document.getElementById("message");
+function closeMessage(idMessage) {
+  let messageDisplay = document.getElementById(idMessage);
   if (messageDisplay.style.display !== "none") {
     messageDisplay.style.display = "none";
   }
@@ -91,6 +91,7 @@ function displayAnswer() {
  * Restart the game. Set divs and buttons to their initial state. Set variables to the start game values.
  */
 function restartGame() {
+  closeMessage("finish-message");
   document.getElementById("score").innerHTML = "Are you ready to rock?";
   document.getElementById("finish").style.display = "none";
   document.getElementById("next").style.display = "initial";
@@ -119,6 +120,7 @@ function nextQuestion() {
  * Decreases the value of the global variable currentQuestion and loads it.
  */
 function previousQuestion() {
+  closeMessage("finish-message");
   if (document.getElementById("finish").style.display === "initial") {
     document.getElementById("finish").style.display = "none";
     document.getElementById("next").style.display = "initial";
@@ -132,25 +134,38 @@ function previousQuestion() {
  * Calls the saveLeaderboard function to add the game to the leaderboard.
  */
 function finishGame() {
-  document.getElementById("questions-game").style.display = "none";
+  if (isGameCompleted()) {
+    document.getElementById("questions-game").style.display = "none";
 
-  let resultMessage = document.getElementById("result-message");
-  let resultImage = document.getElementById("result-image");
+    let resultMessage = document.getElementById("result-message");
+    let resultImage = document.getElementById("result-image");
 
-  if (score.points >= 0 && score.points <= 1) {
-    resultMessage.innerHTML = "I think you might have misunderstood the type of rock we are talking about.";
-    resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
-  } else if (score.points > 1 && score.points <= 3) {
-    resultMessage.innerHTML = "As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.";
-    resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
+    if (score.points >= 0 && score.points <= 1) {
+      resultMessage.innerHTML = "I think you might have misunderstood the type of rock we are talking about.";
+      resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
+    } else if (score.points > 1 && score.points <= 3) {
+      resultMessage.innerHTML = "As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.";
+      resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
+    } else {
+      resultMessage.innerHTML = "Well, well... We have a rockstar here. Congratulations!";
+      resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
+    }
+
+    saveLeaderboard();
+
+    document.getElementById("finish-game").style.display = "flex";
   } else {
-    resultMessage.innerHTML = "Well, well... We have a rockstar here. Congratulations!";
-    resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
+    document.getElementById("finish-message").style.display = "block";
   }
+  
+}
 
-  saveLeaderboard();
-
-  document.getElementById("finish-game").style.display = "flex";
+/**
+ * Check if all questions have been answered
+ * @returns boolean - True if all the questions have been answered
+ */
+function isGameCompleted() {
+  return currentGame.indexOf(null) === -1 ? true : false;
 }
 
 /**
@@ -204,7 +219,7 @@ function updateScore() {
  * @param {boolean} show - Boolean to verify if its to show or close the div 
  */
 function showRules(show) {
-  closeMessage();
+  closeMessage("message");
   let rulesDisplay = document.getElementById("rules");
   let startDisplay = document.getElementById("start-game");
   if (show) {
@@ -222,7 +237,7 @@ function showRules(show) {
  * @param {boolean} show - Boolean to verify if its to show or close the div 
  */
 function showLeaderboard(show) {
-  closeMessage();
+  closeMessage("message");
   let leaderboardDisplay = document.getElementById("leaderboard");
   let startDisplay = document.getElementById("start-game");
   if (show) {

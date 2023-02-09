@@ -90,7 +90,7 @@ section {
 
 /* divs where the game are loaded not visible at the start */
 
-#questions-game, #finish-game, #rules,  #leaderboard, #message {
+#questions-game, #finish-game, #rules,  #leaderboard, #message, #finish-message {
   display: none;
   text-align: center;
 }
@@ -122,7 +122,7 @@ section {
   display: none;
 }
 
-#message {
+.messages {
   font-size: 1rem;
   background-color: #171717;
   padding: 0.5rem;
