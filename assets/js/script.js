@@ -179,6 +179,7 @@ function saveLeaderboard() {
   }
 
   currentLeaderboard.push(score);
+  currentLeaderboard.sort((a, b) => b.points - a.points);
   localStorage.setItem("leaderboard", JSON.stringify(currentLeaderboard));
   leaderboard = localStorage.leaderboard;
 }
