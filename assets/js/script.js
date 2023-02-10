@@ -2,9 +2,11 @@
 let leaderboard = localStorage.leaderboard;
 let currentQuestion = 0;
 let currentGame = [];
+let questions = [];
 
 const score = {
   "name": "",
+  "category": "",
   "points": 0
 };
 
@@ -18,10 +20,26 @@ function startGame() {
     currentGame[i] = null;
   }
   score.name = document.getElementById("name").value;
+  if (document.querySelector("input[name='category']:checked") !== null) {
+    score.category = document.querySelector("input[name='category']:checked").value;
+  }
 
-  if (score.name === "") {
+  if (score.name === "" || score.category === "") {
     document.getElementById("message").style.display = "block";
   } else {
+    switch (score.category) {
+      case "guess" :
+        questions = guessWho;
+        break;
+      case "ballads" :
+        questions = powerBallads;
+        break;
+      case "albums" :
+        questions = guessAlbum;
+        break;
+      default :
+        questions = hardRock;
+    }
     document.getElementById("username").innerHTML = score.name;
     document.getElementById("start-game").style.display = "none";
     document.getElementById("questions-game").style.display = "flex";
@@ -51,10 +69,10 @@ function loadQuestion() {
     document.getElementById("previous").removeAttribute("disabled");
   }
 
-  document.getElementById("question").innerHTML = hardRock[currentQuestion].question;
+  document.getElementById("question").innerHTML = questions[currentQuestion].question;
   let options = document.getElementById("options");
   options.innerHTML = "";
-  for (let opt of hardRock[currentQuestion].options) {
+  for (let opt of questions[currentQuestion].options) {
     let optButton = document.createElement("input");
     optButton.type = "button";
     optButton.setAttribute("class", "options");
@@ -75,7 +93,7 @@ function displayAnswer() {
   let options = document.getElementsByClassName("options");
   for (let option of options) {
     option.setAttribute("disabled", "");
-    if (option.value === hardRock[currentQuestion].correct) {
+    if (option.value === questions[currentQuestion].correct) {
       option.classList.add("correct");
     } else {
       option.classList.add("incorrect");
@@ -108,7 +126,7 @@ function restartGame() {
  * Increases the value of the global variable currentQuestion and loads it.
  */
 function nextQuestion() {
-  if (currentQuestion === hardRock.length-2) {
+  if (currentQuestion === questions.length-2) {
     document.getElementById("next").style.display = "none";
     document.getElementById("finish").style.display = "initial";
   }
@@ -194,7 +212,7 @@ function saveLeaderboard() {
 function checkAnswer(answer) {
   saveCurrentGame(answer.value);
   displayAnswer();
-  if (answer.value === hardRock[currentQuestion].correct) {
+  if (answer.value === questions[currentQuestion].correct) {
     score.points++;
   }
   updateScore();
@@ -212,7 +230,7 @@ function saveCurrentGame(choice) {
  * Update the screen with the user's current score
  */
 function updateScore() {
-  document.getElementById("score").innerHTML = "Score: " + score.points + "/" + hardRock.length;
+  document.getElementById("score").innerHTML = "Score: " + score.points + "/" + questions.length;
 }
 
 /**

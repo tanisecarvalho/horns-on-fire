@@ -42,7 +42,22 @@
       <!-- div where the game starts with input text for name and buttons -->
       <div class="main-game">
         <input type="text" id="name" name="name" class="input" placeholder="Enter your name" onfocus="closeMessage('message')">
-        <span id="message" class="messages">Hey! We know that the show must go on, but first enter your name to start the game!</span>
+        <h3>Choose a category</h3>
+        <div id="categories">
+          <div>
+            <input type="radio" name="category" id="guess-who" value="guess">
+            <label for="guess-who">Who am I?</label>
+          </div>
+          <div>
+            <input type="radio" name="category" id="balads" value="ballads">
+            <label for="balads">Power Ballads</label>
+          </div>
+          <div>
+            <input type="radio" name="category" id="albums" value="albums">
+            <label for="albums">Guess the Album</label>
+          </div>
+        </div>
+        <span id="message" class="messages">Hey! We know that the show must go on, but first enter your name and select a category to start the game!</span>
         <input type="button" value="Start" class="button" id="start" onclick="startGame()">
         <input type="button" value="Rules" class="button" onclick="showRules(true)">
         <input type="button" value="Leaderboard" class="button" onclick="showLeaderboard(true)">

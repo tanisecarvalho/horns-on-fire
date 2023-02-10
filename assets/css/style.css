@@ -137,9 +137,21 @@ section {
   border: 5px solid #171717;
   border-radius: 5px;
   padding: 5px;
+  font-family: 'New Rocker', cursive;
   font-size: 1.2rem;
+  letter-spacing: 3px;
   text-align: center;
   color: #F1473A;
+}
+
+#categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'New Rocker';
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: #171717;
 }
 
 /* QUESTIONS LOADED */
@@ -239,7 +251,7 @@ footer i {
       font-size: 1.5rem;
   }
 
-  header, .game-controls {
+  header, .game-controls, #categories {
       flex-direction: row;
   }
 
