@@ -120,6 +120,7 @@ function displayAnswer() {
 function restartGame() {
   closeMessage("finish-message");
   document.getElementById("score").innerHTML = "Are you ready to rock?";
+  document.getElementById("album").innerHTML = "";
   document.getElementById("finish").style.display = "none";
   document.getElementById("next").style.display = "initial";
   document.getElementById("finish-game").style.display = "none";
