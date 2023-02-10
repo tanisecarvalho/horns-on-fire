@@ -69,6 +69,11 @@ function loadQuestion() {
     document.getElementById("previous").removeAttribute("disabled");
   }
 
+  if (score.category === "albums") {
+    let imageAlbum = "<img id='album-img' class='album-cover' src='assets/images/albums/" + questions[currentQuestion].album + "' alt='Album cover' width='128' height='128'>";
+    document.getElementById("album").innerHTML = imageAlbum;
+  }
+
   document.getElementById("question").innerHTML = questions[currentQuestion].question;
   let options = document.getElementById("options");
   options.innerHTML = "";
@@ -101,6 +106,10 @@ function displayAnswer() {
 
     if (option.value === currentGame[currentQuestion]) {
       option.classList.add("selected");
+    }
+
+    if (score.category === "albums") {
+      document.getElementById("album-img").classList.remove("album-cover");
     }
   }
 }
