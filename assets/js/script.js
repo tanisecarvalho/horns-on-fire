@@ -240,14 +240,16 @@ function saveLeaderboard() {
     currentLeaderboard = JSON.parse(leaderboard);
   }
 
-  if (currentLeaderboard.length >= GAME_LIMIT) {
+  if (currentLeaderboard.length >= GAME_LIMIT && score.points > currentLeaderboard[currentLeaderboard.length-1].points) {
     currentLeaderboard.pop();
   }
 
-  currentLeaderboard.push(score);
-  currentLeaderboard.sort((a, b) => b.points - a.points);
-  localStorage.setItem("leaderboard", JSON.stringify(currentLeaderboard));
-  leaderboard = localStorage.leaderboard;
+  if (currentLeaderboard.length < GAME_LIMIT) {
+    currentLeaderboard.push(score);
+    currentLeaderboard.sort((a, b) => b.points - a.points);
+    localStorage.setItem("leaderboard", JSON.stringify(currentLeaderboard));
+    leaderboard = localStorage.leaderboard;
+  }
 }
 
 /**
