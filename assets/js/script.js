@@ -200,14 +200,16 @@ function finishGame() {
     let resultMessage = document.getElementById("result-message");
     let resultImage = document.getElementById("result-image");
 
+    resultMessage.innerHTML = "<p>You got " + score.points + " points!</p>";
+
     if (score.points >= 0 && score.points <= 1) {
-      resultMessage.innerHTML = "I think you might have misunderstood the type of rock we are talking about.";
+      resultMessage.innerHTML += "<p>I think you might have misunderstood the type of rock we are talking about.</p>";
       resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
     } else if (score.points > 1 && score.points <= 3) {
-      resultMessage.innerHTML = "As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.";
+      resultMessage.innerHTML += "<p>As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.</p>";
       resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
     } else {
-      resultMessage.innerHTML = "Well, well... We have a rockstar here. Congratulations!";
+      resultMessage.innerHTML += "<p>Well, well... We have a rockstar here. Congratulations!</p>";
       resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
     }
 
