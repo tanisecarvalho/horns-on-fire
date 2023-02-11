@@ -11,6 +11,9 @@ const score = {
   "points": 0
 };
 
+// Load current year on footer
+document.getElementById("year").innerHTML = new Date().getFullYear();
+
 /**
  * Define the questions to be used on the game according to the category selected by the user.
  * Choose the GAME_LIMIT number of random questions from the main array.
