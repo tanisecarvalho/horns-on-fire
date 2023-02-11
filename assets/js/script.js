@@ -143,9 +143,9 @@ function displayAnswer() {
 }
 
 /**
- * Restart the game. Set divs and buttons to their initial state. Set variables to the start game values.
+ * Start a new game. Set divs and buttons to their initial state. Set variables to the start game values.
  */
-function restartGame() {
+function newGame() {
   closeMessage("finish-message");
   document.getElementById("score").innerHTML = "Are you ready to rock?";
   document.getElementById("album").innerHTML = "";
