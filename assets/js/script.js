@@ -240,6 +240,10 @@ function saveLeaderboard() {
     currentLeaderboard = JSON.parse(leaderboard);
   }
 
+  if (currentLeaderboard.length >= GAME_LIMIT) {
+    currentLeaderboard.pop();
+  }
+
   currentLeaderboard.push(score);
   currentLeaderboard.sort((a, b) => b.points - a.points);
   localStorage.setItem("leaderboard", JSON.stringify(currentLeaderboard));
