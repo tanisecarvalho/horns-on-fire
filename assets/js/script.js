@@ -329,10 +329,27 @@ function loadLeaderboard() {
     for (let result of currentLeaderboard) {
       let resultTr = document.createElement("tr");
       let resultName = document.createElement("td");
+      let resultCategory = document.createElement("td");
       let resultScore = document.createElement("td");
+
+      switch (result.category) {
+        case "guess" :
+          resultCategory.innerHTML = "Who am I?";
+          break;
+        case "ballads" :
+          resultCategory.innerHTML = "Power Ballads";
+          break;
+        case "albums" :
+          resultCategory.innerHTML = "Guess the Album";
+          break;
+        default :
+        resultCategory.innerHTML = "-";
+      }
+
       resultName.innerHTML = result.name;
       resultScore.innerHTML = result.points;
       resultTr.appendChild(resultName);
+      resultTr.appendChild(resultCategory);
       resultTr.appendChild(resultScore);
       leaderboardResults.appendChild(resultTr);
     }
