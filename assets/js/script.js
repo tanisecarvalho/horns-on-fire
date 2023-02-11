@@ -3,6 +3,7 @@ let leaderboard = localStorage.leaderboard;
 let currentQuestion = 0;
 let currentGame = [];
 let questions = [];
+const GAME_LIMIT = 5;
 
 const score = {
   "name": "",
@@ -11,12 +12,25 @@ const score = {
 };
 
 /**
+ * Define the questions to be used on the game according to the category selected by the user.
+ * Choose the GAME_LIMIT number of random questions from the main array.
+ * @param {array} chosenCategory - The array with the category selected by the user
+ */
+function defineQuestions(chosenCategory) {  
+  let safeCopy = chosenCategory.slice();
+  for (let i = 0; i < GAME_LIMIT; i++) {
+    let newQuestion = Math.floor(Math.random() * safeCopy.length);
+    questions.push(safeCopy.splice(newQuestion, 1)[0]);
+  }
+}
+
+/**
  * Starts the game, it's called when the start button is clicked.
  * It checks if the name was informed and set the questions div to visible.
  * Calls the function loadQuestion to load the first question of the game.
  */
 function startGame() {
-  for (let i in hardRock) {
+  for (let i = 0; i < GAME_LIMIT; i++) {
     currentGame[i] = null;
   }
   score.name = document.getElementById("name").value;
@@ -29,17 +43,18 @@ function startGame() {
   } else {
     switch (score.category) {
       case "guess" :
-        questions = guessWho;
+        defineQuestions(guessWho);
         break;
       case "ballads" :
-        questions = powerBallads;
+        defineQuestions(powerBallads);
         break;
       case "albums" :
-        questions = guessAlbum;
+        defineQuestions(guessAlbum);
         break;
       default :
-        questions = hardRock;
+        defineQuestions(hardRock);
     }
+    
     document.getElementById("username").innerHTML = score.name;
     document.getElementById("start-game").style.display = "none";
     document.getElementById("questions-game").style.display = "flex";
@@ -130,6 +145,7 @@ function restartGame() {
   currentQuestion = 0;
   score.points = 0;
   currentGame = [];
+  questions = [];
 }
 
 /**

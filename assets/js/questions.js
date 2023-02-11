@@ -69,12 +69,12 @@ const guessWho = [
   //   "correct": "Chip Z'Nuff"
   // },
   // {
-  //   "question": "My birth name is '', but you know me as...",
+  //   "question": "My birth name is 'test', but you know me as...",
   //   "options": ["", "", "", ""],
   //   "correct": ""
   // },
   // {
-  //   "question": "My birth name is '', but you know me as...",
+  //   "question": "My birth name is 'tes3', but you know me as...",
   //   "options": ["", "", "", ""],
   //   "correct": ""
   // }
