@@ -100,7 +100,10 @@
             </tr>
           </tbody>
         </table>
-        <input type="button" value="Close" class="button" onclick="showLeaderboard(false)">
+        <div class="game-controls">
+          <input type="button" value="Clear" class="button" onclick="clearLeaderboard()" id="clearLeaderboard">
+          <input type="button" value="Close" class="button" onclick="showLeaderboard(false)">
+        </div>
       </div>
     </div>
 
@@ -124,7 +127,7 @@
         <input type="button" value="Finish" class="button" id="finish" onclick="finishGame()">
         <input type="button" value="Next" class="button" id="next" onclick="nextQuestion()">
         <input type="button" value="Previous" class="button" id="previous" onclick="previousQuestion()">
-        <input type="button" value="New Game" class="button" id="new-game" onclick="mewGame()">
+        <input type="button" value="New Game" class="button" id="new-game" onclick="newGame()">
         
       </div>
 
@@ -140,7 +143,7 @@
       <div id="result-image"></div>
 
       <div class="game-controls">
-        <input type="button" value="Home" class="button" onclick="mewGame()">
+        <input type="button" value="Home" class="button" onclick="newGame()">
       </div>
 
     </div>

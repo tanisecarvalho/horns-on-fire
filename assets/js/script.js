@@ -316,6 +316,7 @@ function showLeaderboard(show) {
  */
 function loadLeaderboard() {
   if (leaderboard !== undefined) {
+    document.getElementById("clearLeaderboard").style.display = "initial";
     let currentLeaderboard = JSON.parse(leaderboard);
     let leaderboardResults = document.getElementById("leaderboard-results");
     leaderboardResults.innerHTML = "";
@@ -329,5 +330,17 @@ function loadLeaderboard() {
       resultTr.appendChild(resultScore);
       leaderboardResults.appendChild(resultTr);
     }
+  } else {
+    document.getElementById("clearLeaderboard").style.display = "none";
   }
+}
+
+/**
+ * Clear current leaderboard
+ */
+function clearLeaderboard() {
+  localStorage.clear();
+  leaderboard = undefined;
+  document.getElementById("leaderboard-results").innerHTML = "";
+  document.getElementById("clearLeaderboard").style.display = "none";
 }
