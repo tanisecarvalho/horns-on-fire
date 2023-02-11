@@ -21,7 +21,20 @@ function defineQuestions(chosenCategory) {
   for (let i = 0; i < GAME_LIMIT; i++) {
     let newQuestion = Math.floor(Math.random() * safeCopy.length);
     questions.push(safeCopy.splice(newQuestion, 1)[0]);
+    shuffleOptions(questions[i].options);
   }
+}
+
+/**
+ * Shuffle the options from the questions.
+ * @param {array} options - The array of options from the question being added to the game.
+ */
+function shuffleOptions(options) {
+
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j], options[i]]
+    }
 }
 
 /**
