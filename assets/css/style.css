@@ -263,6 +263,16 @@ footer i {
   color:#EDEDED;
 }
 
+/* 404 PAGE */
+
+#page-404 {
+  text-align: center;
+}
+
+#image-404 {
+  width: 90%;
+}
+
 /* media queries */
 
 @media screen and (min-width:768px) {
