@@ -127,15 +127,60 @@ const powerBallads = [
     "correct": "Home Sweet Home by Mötley Crüe"
   },
   {
-    "question": "<em>'It was easy to keep all your lies in disguise 'cause you had me in deep with the devil in your eyes'</em>, which balad is this?",
+    "question": "<em>'It was easy to keep all your lies in disguise 'cause you had me in deep with the devil in your eyes...'</em>, which balad is this?",
     "options": ["What It Takes by Aerosmith", "I Don't Love You Anymore by The Quireboys", "Always by Bon Jovi", "November Rain by Guns N' Roses"],
     "correct": "What It Takes by Aerosmith"
+  },
+  {
+    "question": "<em>'But you were there to whisper in my ear: Why don't you share my dreams with me?...'</em>, which balad is this?",
+    "options": ["Let It Rain by Warrant", "House of Pain by Faster Pussycat", "The Deeper of the Love by Whitesnake", "I Live my Life for You by FireHouse"],
+    "correct": "The Deeper of the Love by Whitesnake"
+  },
+  {
+    "question": "<em>'You and me, we had a fight, but the band they played our favorite song and I held you in my arms so strong...'</em>, which balad is this?",
+    "options": ["November Rain by Guns N' Roses", "Never Say Goodbye by Bon Jovi", "Wait by White Lion", "Miles Away by Winger"],
+    "correct": "Never Say Goodbye by Bon Jovi"
+  },
+  {
+    "question": "<em>'Why be alone when we can be together, baby? You can make my life worthwhile I can make you start to smile...'</em>, which balad is this?",
+    "options": ["To Be With You by Mr. Big", "When It's Love by Van Halen", "I'll Cry For You by Europe", "I Live my Life for You by FireHouse"],
+    "correct": "To Be With You by Mr. Big"
+  },
+  {
+    "question": "<em>'Watching the days go by, thinking 'bout the plans we made. Days turn into years. Funny how they fade away...'</em>, which balad is this?",
+    "options": ["Cryin' by Vixen", "Let It Rain by Warrant", "House of Pain by Faster Pussycat", "Heartbreak Station by Cinderella"],
+    "correct": "Heartbreak Station by Cinderella"
+  },
+  {
+    "question": "<em>'Till now I always got by on my own I never really cared until I met you and now it chills me to the bone...'</em>, which balad is this?",
+    "options": ["After the Rain by Nelson", "Alone by Heart", "When It's Love by Van Halen", "Without You by Mötley Crüe"],
+    "correct": "Alone by Heart"
+  },
+  {
+    "question": "<em>'The lonliness just fades away, thoughts of you, just memories. No cryin' now, for what we're missin'...'</em>, which balad is this?",
+    "options": ["I'll Cry For You by Europe", "Miles Away by Winger", "After the Rain by Nelson", "Let It Rain by Warrant"],
+    "correct": "Miles Away by Winger"
+  },
+  {
+    "question": "<em>'They say that love don't last forever. Well, I'd be the last to disagree. Sometimes you win, sometimes you lose...'</em>, which balad is this?",
+    "options": ["Miles Away by Winger", "When It's Love by Van Halen", "Feels Like Love by Danger Danger", "Wait by White Lion"],
+    "correct": "Feels Like Love by Danger Danger"
+  },
+  {
+    "question": "<em>'I never really wanted to let you get inside my heart. I wanted to believe this would soon be ending...'</em>, which balad is this?",
+    "options": ["Alone Again by Dokken", "Everytime I Look At You by Kiss", "Without You by Mötley Crüe", "Cryin' by Vixen"],
+    "correct": "Everytime I Look At You by Kiss"
+  },
+  {
+    "question": "<em>'Though it's been a while now. I can still feel so much pain. Like a knife that cuts you the wound heals...'</em>, which balad is this?",
+    "options": ["Every Rose Has Its Thorn by Poison", "House of Pain by Faster Pussycat", "Alone Again by Dokken", "Without You by Mötley Crüe"],
+    "correct": "Every Rose Has Its Thorn by Poison"
+  },
+  {
+    "question": "<em>'And I will always be with you. And there is nothing we can't do as long as we're together...'</em>, which balad is this?",
+    "options": ["Always by Bon Jovi", "Feels Like Love by Danger Danger", "I Live my Life for You by FireHouse", "Cryin' by Vixen"],
+    "correct": "I Live my Life for You by FireHouse"
   }
-  // {
-  //   "question": "<em>''</em>, which balad is this?",
-  //   "options": ["", "", "", ""],
-  //   "correct": ""
-  // }
 ];
 
 const guessAlbum = [
