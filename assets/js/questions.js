@@ -52,32 +52,57 @@ const guessWho = [
     "question": "My birth name is 'Robert Alan Deal', but you know me as...",
     "options": ["Mick Mars", "Rachel Bolan", "Alice Cooper", "Chip Z'Nuff"],
     "correct": "Mick Mars"
+  },
+  {
+    "question": "My birth name is 'Saul Hudson', but you know me as...",
+    "options": ["Axl Rose", "Scotti Hill", "Geoff Tate", "Slash"],
+    "correct": "Slash"
+  },
+  {
+    "question": "My birth name is 'Jeffrey Dean Isbell', but you know me as...",
+    "options": ["C.C. DeVille", "Izzy Stradlin", "Bret Michaels", "Mick Mars"],
+    "correct": "Izzy Stradlin"
+  },
+  {
+    "question": "My birth name is 'Gregory Rybarski', but you know me as...",
+    "options": ["Alice Cooper", "Chip Z'Nuff", "Duff McKagan", "Slash"],
+    "correct": "Chip Z'Nuff"
+  },
+  {
+    "question": "My birth name is 'Bruce Anthony Johannesson', but you know me as...",
+    "options": ["C.C. DeVille", "Bruce Dickinson", "Bret Michaels", "Slash"],
+    "correct": "C.C. DeVille"
+  },
+  {
+    "question": "My birth name is 'Richard Allan Ream', but you know me as...",
+    "options": ["Axl Rose", "Rikki Rockett", "Snake Sabo", "Vinnie Chas"],
+    "correct": "Rikki Rockett"
+  },
+  {
+    "question": "My birth name is 'Steven Edward Duren', but you know me as...",
+    "options": ["Steven Adler", "Kip Winger", "Steven Sweet", "Blackie Lawless"],
+    "correct": "Blackie Lawless"
+  },
+  {
+    "question": "My birth name is 'John Kennedy Oswald', but you know me as...",
+    "options": ["Stevie Rachelle", "Jani Lane", "Jack Russell", "Mick Mars"],
+    "correct": "Jani Lane"
+  },
+  {
+    "question": "My birth name is 'Jeffrey Philip Wielandt', but you know me as...",
+    "options": ["Geoff Tate", "Richie Sambora", "Zakk Wylde", "C.C. DeVille"],
+    "correct": "Zakk Wylde"
+  },
+  {
+    "question": "My birth name is 'Hector Juan Samuel Torres', but you know me as...",
+    "options": ["Richie Sambora", "Tico Torres", "Slash", "Ozzy Osbourne"],
+    "correct": "Tico Torres"
+  },
+  {
+    "question": "My birth name is 'Mark Glickman', but you know me as...",
+    "options": ["Snake Sabo", "Mark \"The Animal\" Mendoza", "Michael Foster", "Mike Stone"],
+    "correct": "Mark \"The Animal\" Mendoza"
   }
-  // {
-  //   "question": "My birth name is 'Saul Hudson', but you know me as...",
-  //   "options": ["", "", "", "Slash"],
-  //   "correct": "Slash"
-  // },
-  // {
-  //   "question": "My birth name is 'Jeffrey Dean Isbell', but you know me as...",
-  //   "options": ["", "Izzy Stradlin", "", ""],
-  //   "correct": "Izzy Stradlin"
-  // },
-  // {
-  //   "question": "My birth name is 'Gregory Rybarski', but you know me as...",
-  //   "options": ["", "Chip Z'Nuff", "", ""],
-  //   "correct": "Chip Z'Nuff"
-  // },
-  // {
-  //   "question": "My birth name is 'test', but you know me as...",
-  //   "options": ["", "", "", ""],
-  //   "correct": ""
-  // },
-  // {
-  //   "question": "My birth name is 'tes3', but you know me as...",
-  //   "options": ["", "", "", ""],
-  //   "correct": ""
-  // }
 ];
 
 const powerBallads = [
@@ -143,11 +168,65 @@ const guessAlbum = [
     "options": ["Danger Danger by Danger Danger", "Appetite for Destruction by Guns N' Roses", "Skid Row by Skid Row", "Pornograffiti by Extreme"],
     "correct": "Danger Danger by Danger Danger",
     "album": "05.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["Dr. Feelgood by Mötley Crüe", "The Final Countdown by Europe", "Trixter by Trixter", "Night Songs by Cinderella"],
+    "correct": "The Final Countdown by Europe",
+    "album": "06.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["Pornograffiti by Extreme", "Bark at the Moon by Ozzy Osbourne", "Cherry Pie by Warrant", "Dr. Feelgood by Mötley Crüe"],
+    "correct": "Pornograffiti by Extreme",
+    "album": "07.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["New Jersey by Bon Jovi", "Cherry Pie by Warrant", "Metal Health by Quiet Riot", "After the Rain by Nelson"],
+    "correct": "Metal Health by Quiet Riot",
+    "album": "08.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["Night Songs by Cinderella", "Dr. Feelgood by Mötley Crüe", "Hysteria by Def Leppard", "Cherry Pie by Warrant"],
+    "correct": "Hysteria by Def Leppard",
+    "album": "09.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["FireHouse by FireHouse", "Bark at the Moon by Ozzy Osbourne", "Slave to the Grind by Skid Row", "Look What the Cat Dragged In by Poison"],
+    "correct": "Look What the Cat Dragged In by Poison",
+    "album": "10.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["Winger by Winger", "1984 by Van Halen", "Bark at the Moon by Ozzy Osbourne", "After the Rain by Nelson"],
+    "correct": "1984 by Van Halen",
+    "album": "11.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["What Comes Around Goes Around by Tuff", "Pump by Aerosmith", "New Jersey by Bon Jovi", "Night Songs by Cinderella"],
+    "correct": "Pump by Aerosmith",
+    "album": "12.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["Winger by Winger", "Slippery When Wet by Bon Jovi", "FireHouse by FireHouse", "What Comes Around Goes Around by Tuff"],
+    "correct": "Slippery When Wet by Bon Jovi",
+    "album": "13.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["After the Rain by Nelson", "New Jersey by Bon Jovi", "Dog Eat Dog by Warrant", "What Comes Around Goes Around by Tuff"],
+    "correct": "Dog Eat Dog by Warrant",
+    "album": "14.jpg"
+  },
+  {
+    "question": "Which album is this?",
+    "options": ["Slave to the Grind by Skid Row", "FireHouse by FireHouse", "After the Rain by Nelson", "Winger by Winger"],
+    "correct": "After the Rain by Nelson",
+    "album": "15.jpg"
   }
-  // {
-  //   "question": "Which album is this?",
-  //   "options": ["", "", "", ""],
-  //   "correct": "",
-  //   "album": "01.jpg"
-  // }
 ];
