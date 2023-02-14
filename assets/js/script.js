@@ -200,12 +200,12 @@ function finishGame() {
     let resultMessage = document.getElementById("result-message");
     let resultImage = document.getElementById("result-image");
 
-    resultMessage.innerHTML = "<p>You got " + score.points + " points!</p>";
+    resultMessage.innerHTML = "<p>You got " + score.points + " points out of " + GAME_LIMIT + "!</p>";
 
-    if (score.points >= 0 && score.points <= 1) {
+    if (score.points >= 0 && score.points <= (GAME_LIMIT / 3)) {
       resultMessage.innerHTML += "<p>I think you might have misunderstood the type of rock we are talking about.</p>";
       resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
-    } else if (score.points > 1 && score.points <= 3) {
+    } else if (score.points > (GAME_LIMIT / 3) && score.points <= (GAME_LIMIT - 3)) {
       resultMessage.innerHTML += "<p>As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.</p>";
       resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
     } else {
