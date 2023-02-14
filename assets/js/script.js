@@ -3,7 +3,7 @@ let leaderboard = localStorage.leaderboard;
 let currentQuestion = 0;
 let currentGame = [];
 let questions = [];
-const GAME_LIMIT = 5;
+const GAME_LIMIT = 10;
 
 const score = {
   "name": "",
@@ -68,7 +68,7 @@ function startGame() {
         defineQuestions(guessAlbum);
         break;
       default :
-        defineQuestions(hardRock);
+        defineQuestions(guessAlbum);
     }
     
     document.getElementById("username").innerHTML = score.name;
