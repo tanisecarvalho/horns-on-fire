@@ -180,6 +180,15 @@ The site has one main page, __index.html__, where all the game is played. It als
     * Guess the Album
     ![Guess the Album](docs/features/guess-the-album.JPG)
 
+    * When the user starts playing the game, a custom cursor 🤘 will display when it is over the options. After the user select an option, the background will change to green for the correct one and red for the wrong ones. A black border will display around the option selected by the user. The score will display under the welcome message. If the user is playing the "Guess the Album" category, the album will be blured at the start and the original picture will show after the option is selected.
+    ![Response](docs/features/response.gif)
+
+    * The user can go back and forth between questions.
+    ![Between Questions](docs/features/between-questions.gif)
+
+    * The game is only finished once the user answers all the questions.
+    ![Finish Game](docs/features/finish-game.gif)
+
   * Result: When the game is finished, the result is loaded to the user. It shows the score, a message and a image based on how many points the user got.
   ![Result Low](docs/features/result-low.JPG)
   ![Result Medium](docs/features/result-medium.JPG)
@@ -187,7 +196,6 @@ The site has one main page, __index.html__, where all the game is played. It als
 
   * 404 Page: An error 404 page was designed to facilitate the user return to the home page in case they try to access an inexistent page.
   ![404 Page](docs/features/404-page.JPG)
-
 
 ### Future Implementations
 
