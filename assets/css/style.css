@@ -273,6 +273,15 @@ footer i {
   width: 90%;
 }
 
+.back-home {
+  color: #F79326;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  color: #171717;
+}
+
 /* media queries */
 
 @media screen and (min-width:768px) {
