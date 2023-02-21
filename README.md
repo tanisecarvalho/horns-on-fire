@@ -1,12 +1,17 @@
 # Horns On Fire 🤘🔥
 
-Horns On Fire is a quiz for those passionate about Rock n' Roll to test their knowledge on this genre.
+### Deployed Site: [Horns On Fire](https://tanisecarvalho.github.io/horns-on-fire/)
 
-This quiz includes questions about musicians, albums, music, and the genre in general.
+![Am I Responsive](docs/am-i-responsive.JPG)
 
-Include amiresponsive image
+Horns On Fire is a quiz for those passionate about 80's and 90's Hard Rock who want to test their knowledge and have some fun.
 
-Live Link: [Horns On Fire](https://tanisecarvalho.github.io/horns-on-fire/)
+Each match will show the user 10 questions with 4 possible answers each.
+
+This quiz is divided in three categories: 
+* __Who am I?:__ In this category the user will see the birth name of a musician and have to guess who they are.
+* __Power Ballads:__ In this category the user will see part of the lyrics of a ballad and have to guess which song it is.
+* __Guess the Album:__ In this category the user will se a blur image of an album cover and have to guess which one is.
 
 ---
 
@@ -49,13 +54,14 @@ Live Link: [Horns On Fire](https://tanisecarvalho.github.io/horns-on-fire/)
 
 ### User Stories
 
-* I want to be able to play this quiz to test my Rock n' Roll knowledge.
 * I want this website to be responsive to my device.
 * I want to easily navigate on this website.
-* I want to know my score.
-* I want to play with or without sound.
-* I want to know how long I take to answer the quiz.
+* I want to be able to play this quiz to test my 80's and 90's Hard Rock knowledge.
+* I want to select different categories to play.
 * I want to know if I selected the correct option.
+* I want to know my score.
+* I want to check my scores.
+* I want to check the rules.
 
 ***
 
@@ -86,7 +92,7 @@ I have used Google Fonts to select and import the font used on this website.
 
 ### Imagery
 
-The logo and background were created using [Canva](https://www.canva.com/). The horns was chosen to be the logo as it is a caracteristic symbol for rock n' roll fans. And from using the symbol is that the name of the quiz came to life. The fire on the name is because it is common to say of a concert that the band was on fire.
+The logo and background were created using [Canva](https://www.canva.com/). The horns was chosen to be the logo as it is a caracteristic symbol for rock n' roll fans. And from using the symbol is that the name of the quiz came to life. The fire on the name is because it is common to say about a concert that the band was on fire.
 
 * Logo
 
@@ -125,7 +131,7 @@ All the wireframes were created using [Balsamiq](https://balsamiq.com/).
 
   <br>
 
-  Create wireframes for tablet
+  ![Tablet](docs/wireframes/05_tablet.png)
 </details>
 
 <details>
@@ -141,7 +147,47 @@ All the wireframes were created using [Balsamiq](https://balsamiq.com/).
 
 ## Features
 
-Show here all the features.
+The site has one main page, __index.html__, where all the game is played. It also has a 404 page. Both pages are responsive.
+
+* Favicon: Both pages have a favicon, which is the site logo.
+![Favicon](docs/features/favicon.JPG)
+
+* Header: During the whole game the logo and name of the quiz with a short description show at the top of the page.
+![Header](docs/features/header.JPG)
+
+* Footer: There is a footer in the end of the pages with the project name and links for the developer's LinkedIn and GitHub pages.
+![Footer](docs/features/footer.JPG)
+
+* Main Section: all the game happens here.
+
+  * Home: What is showed when the user access the page or select to start a new game. If the user doesn't enter a name and/or select a category a message is showed and the game doesn't start until the user attend to the requirements.
+  ![Main Page](docs/features/main.JPG)
+  ![Main Page - Message](docs/features/main-alert.JPG)
+
+  * Rules: When the user clicks on the Rules button the rules are loaded on the main section.
+  ![Rules](docs/features/rules.JPG)
+
+  * Leaderboard: When the user clicks on the Leaderboard button the rules are loaded on the main section. The best 10 scores will be kept. The user has the option to clear the leaderboard.
+  ![Leaderboard](docs/features/leaderboard.JPG)
+
+  * Playing the Game: 10 random questions will be loaded according to the cateogry select by the user.
+    * Who am I?
+    ![Who am I?](docs/features/who-am-i.JPG)
+
+    * Power Ballads
+    ![Power Ballads](docs/features/power-ballads.JPG)
+
+    * Guess the Album
+    ![Guess the Album](docs/features/guess-the-album.JPG)
+
+  * Result: When the game is finished, the result is loaded to the user. It shows the score, a message and a image based on how many points the user got.
+  ![Result Low](docs/features/result-low.JPG)
+  ![Result Medium](docs/features/result-medium.JPG)
+  ![Result High](docs/features/result-high.JPG)
+
+  * 404 Page: An error 404 page was designed to facilitate the user return to the home page in case they try to access an inexistent page.
+  ![404 Page](docs/features/404-page.JPG)
+
 
 ### Future Implementations
 

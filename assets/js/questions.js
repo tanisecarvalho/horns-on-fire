@@ -1,3 +1,5 @@
+/*  jshint esversion: 11 */
+
 // array of questions for the Who Am I? category
 const guessWho = [
   {

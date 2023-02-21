@@ -1,3 +1,5 @@
+/*  jshint esversion: 11 */
+
 // main variables to control the game
 let leaderboard = localStorage.leaderboard;
 let currentQuestion = 0;
