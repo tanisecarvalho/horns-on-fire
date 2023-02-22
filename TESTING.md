@@ -1,8 +1,8 @@
-# HORNS ON FIRE - TESTING
+# Horns On Fire 🤘🔥 - TESTING
 
-add amiresponsive image
+### Deployed Site: [Horns On Fire](https://tanisecarvalho.github.io/horns-on-fire/)
 
-add live link
+![Am I Responsive](docs/am-i-responsive.JPG)
 
 ---
 
@@ -22,15 +22,21 @@ add live link
   * [Known Bugs](#known-bugs)
   * [Solved Bugs](#solved-bugs)
 
+Testing was realised during the whole development of this project. Chrome Devtools was the primary tool utilised in this process. 
+
+Additionally, since the quiz became functional, the site was deployed. The link was shared with friends and family to get their constant feedback towards the functionalities, design and accessibility.
+
 ---
 
 ## AUTOMATED TESTING
 
-The Automated Testing includes all the testing that is carried out by a program, like W3C HTML validation.
-
 ###  W3C Validator
 
-Put the w3c results here
+No errors were returned when passing the pages through the official W3C validator:
+
+* [Main Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftanisecarvalho.github.io%2Fhorns-on-fire%2Findex.html)
+
+* [404 Page]()
 
 ### Jigsaw Validator
 

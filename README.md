@@ -74,7 +74,7 @@ This quiz is divided into three categories:
 
 * I want to check the rules.
 
-***
+___
 
 ## Design
 
@@ -161,7 +161,7 @@ All the wireframes were created using [Balsamiq](https://balsamiq.com/).
 
 </details>
 
-***
+---
 
 ## Features
 
@@ -223,6 +223,8 @@ For future implementations, I would like to:
 * Have different levels for the user to play.
 * Have the matches saved into the database so the leaderboard would show all users that play the game, not only the ones by the browser.
 
+---
+
 ## Technologies Used
 
 ### Languages Used
@@ -259,9 +261,13 @@ This project used:
 
 * [Gyazo GIF](https://gyazo.com/) to create gifs of this project features for this documentation.
 
+---
+
 ## Testing
 
 Please check the [TESTING.md](TESTING.md) file for all the tests.
+
+---
 
 ## Deployment & Local Development
 
@@ -303,6 +309,8 @@ This site was developed using Gitpod. To edit your copy on Gitpod, you will need
   4. It will open the Gitpod website. On the first time, you will select to connect with your GitHub account and Authorize gitpod-io. After that, you'll create an account.
   5. It might take a while after that because Gitpod will create your workspace.
   After the workspace is loaded, you can edit it on Gitpod.
+
+---
 
 ## Credits
 
