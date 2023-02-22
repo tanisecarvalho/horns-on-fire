@@ -20,7 +20,6 @@
 
 * [BUGS](#bugs)
   * [Known Bugs](#known-bugs)
-  * [Solved Bugs](#solved-bugs)
 
 Testing was realised during the whole development of this project. Chrome Devtools was the primary tool utilised in this process. 
 
@@ -185,3 +184,7 @@ Also, the site was tested by family and friends on a variety of devices/screen s
 ### Known Bugs
 
 When accessing the site on the iPhone SE 2020, on the Main Page, the text "Choose a category" is not centralised. I couldn't reproduce it on Devtools, and in other mobile devices it's working correctly.
+
+---
+
+Back to [README.md](README.md)
