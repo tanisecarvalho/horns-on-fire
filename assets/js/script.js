@@ -1,13 +1,20 @@
 /*  jshint esversion: 11 */
 
-// main variables to control the game
+/* main variables to control the game */
+
+// receives the leaderboard saved on the localStorage
 let leaderboard = localStorage.leaderboard;
+// used to control the navigation during the game
 let currentQuestion = 0;
+// array that receives the answers for the current game being played
 let currentGame = [];
+// array that receives the questions of the current game
 let questions = [];
+// constant that defines the limit of questions and games saved on the leaderboard
 const GAME_LIMIT = 10;
 
-const score = {
+// object that receives the information about the player and the current game
+const player = {
   "name": "",
   "category": "",
   "points": 0
@@ -15,6 +22,18 @@ const score = {
 
 // Load current year on footer
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
+/**
+ * Shuffle the options from the questions.
+ * @param {array} options - The array of options from the question being added to the game.
+ */
+function shuffleOptions(options) {
+
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+}
 
 /**
  * Define the questions to be used on the game according to the category selected by the user.
@@ -31,63 +50,25 @@ function defineQuestions(chosenCategory) {
 }
 
 /**
- * Shuffle the options from the questions.
- * @param {array} options - The array of options from the question being added to the game.
+ * Show the correct answer of the questions, disable the options and displays the option selected by the user.
  */
-function shuffleOptions(options) {
-
-    for (let i = options.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [options[i], options[j]] = [options[j], options[i]];
+function displayAnswer() {
+  let options = document.getElementsByClassName("options");
+  for (let option of options) {
+    option.setAttribute("disabled", "");
+    if (option.value === questions[currentQuestion].correct) {
+      option.classList.add("correct");
+    } else {
+      option.classList.add("incorrect");
     }
-}
 
-/**
- * Starts the game, it's called when the start button is clicked.
- * It checks if the name was informed and set the questions div to visible.
- * Calls the function loadQuestion to load the first question of the game.
- */
-function startGame() {
-  for (let i = 0; i < GAME_LIMIT; i++) {
-    currentGame[i] = null;
-  }
-  score.name = document.getElementById("name").value;
-  if (document.querySelector("input[name='category']:checked") !== null) {
-    score.category = document.querySelector("input[name='category']:checked").value;
-  }
-
-  if (score.name === "" || score.category === "") {
-    document.getElementById("message").style.display = "block";
-  } else {
-    switch (score.category) {
-      case "guess" :
-        defineQuestions(guessWho);
-        break;
-      case "ballads" :
-        defineQuestions(powerBallads);
-        break;
-      case "albums" :
-        defineQuestions(guessAlbum);
-        break;
-      default :
-        defineQuestions(guessAlbum);
+    if (option.value === currentGame[currentQuestion]) {
+      option.classList.add("selected");
     }
-    
-    document.getElementById("username").innerHTML = score.name;
-    document.getElementById("start-game").style.display = "none";
-    document.getElementById("questions-game").style.display = "flex";
 
-    loadQuestion();
-  }
-}
-
-/**
- * Close the span message showed when the user doesn't enter a name
- */
-function closeMessage(idMessage) {
-  let messageDisplay = document.getElementById(idMessage);
-  if (messageDisplay.style.display !== "none") {
-    messageDisplay.style.display = "none";
+    if (player.category === "albums") {
+      document.getElementById("album-img").classList.remove("album-cover");
+    }
   }
 }
 
@@ -102,7 +83,7 @@ function loadQuestion() {
     document.getElementById("previous").removeAttribute("disabled");
   }
 
-  if (score.category === "albums") {
+  if (player.category === "albums") {
     let imageAlbum = "<img id='album-img' class='album-cover' src='assets/images/albums/" + questions[currentQuestion].album + "' alt='Album cover' width='128' height='128'>";
     document.getElementById("album").innerHTML = imageAlbum;
   }
@@ -125,25 +106,51 @@ function loadQuestion() {
 }
 
 /**
- * Show the correct answer of the questions, disable the options and displays the option selected by the user.
+ * Starts the game, it's called when the start button is clicked.
+ * It checks if the name was informed and set the questions div to visible.
+ * Calls the function loadQuestion to load the first question of the game.
  */
-function displayAnswer() {
-  let options = document.getElementsByClassName("options");
-  for (let option of options) {
-    option.setAttribute("disabled", "");
-    if (option.value === questions[currentQuestion].correct) {
-      option.classList.add("correct");
-    } else {
-      option.classList.add("incorrect");
-    }
+function startGame() {
+  for (let i = 0; i < GAME_LIMIT; i++) {
+    currentGame[i] = null;
+  }
+  player.name = document.getElementById("name").value;
+  if (document.querySelector("input[name='category']:checked") !== null) {
+    player.category = document.querySelector("input[name='category']:checked").value;
+  }
 
-    if (option.value === currentGame[currentQuestion]) {
-      option.classList.add("selected");
+  if (player.name === "" || player.category === "") {
+    document.getElementById("message").style.display = "block";
+  } else {
+    switch (player.category) {
+      case "guess" :
+        defineQuestions(guessWho);
+        break;
+      case "ballads" :
+        defineQuestions(powerBallads);
+        break;
+      case "albums" :
+        defineQuestions(guessAlbum);
+        break;
+      default :
+        defineQuestions(guessAlbum);
     }
+    
+    document.getElementById("username").innerHTML = player.name;
+    document.getElementById("start-game").style.display = "none";
+    document.getElementById("questions-game").style.display = "flex";
 
-    if (score.category === "albums") {
-      document.getElementById("album-img").classList.remove("album-cover");
-    }
+    loadQuestion();
+  }
+}
+
+/**
+ * Close the span message showed when the user doesn't enter a name
+ */
+function closeMessage(idMessage) {
+  let messageDisplay = document.getElementById(idMessage);
+  if (messageDisplay.style.display !== "none") {
+    messageDisplay.style.display = "none";
   }
 }
 
@@ -161,21 +168,9 @@ function newGame() {
   document.getElementById("start-game").style.display = "flex";
 
   currentQuestion = 0;
-  score.points = 0;
+  player.points = 0;
   currentGame = [];
   questions = [];
-}
-
-/**
- * Increases the value of the global variable currentQuestion and loads it.
- */
-function nextQuestion() {
-  if (currentQuestion === questions.length-2) {
-    document.getElementById("next").style.display = "none";
-    document.getElementById("finish").style.display = "initial";
-  }
-  currentQuestion++;
-  loadQuestion();
 }
 
 /**
@@ -192,36 +187,15 @@ function previousQuestion() {
 }
 
 /**
- * Finishes the game. Check the score to present a personalised image and message.
- * Calls the saveLeaderboard function to add the game to the leaderboard.
+ * Increases the value of the global variable currentQuestion and loads it.
  */
-function finishGame() {
-  if (isGameCompleted()) {
-    document.getElementById("questions-game").style.display = "none";
-
-    let resultMessage = document.getElementById("result-message");
-    let resultImage = document.getElementById("result-image");
-
-    resultMessage.innerHTML = "<p>You got " + score.points + " points out of " + GAME_LIMIT + "!</p>";
-
-    if (score.points >= 0 && score.points <= (GAME_LIMIT / 3)) {
-      resultMessage.innerHTML += "<p>I think you might have misunderstood the type of rock we are talking about.</p>";
-      resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
-    } else if (score.points > (GAME_LIMIT / 3) && score.points <= (GAME_LIMIT - 3)) {
-      resultMessage.innerHTML += "<p>As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.</p>";
-      resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
-    } else {
-      resultMessage.innerHTML += "<p>Well, well... We have a rockstar here. Congratulations!</p>";
-      resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
-    }
-
-    saveLeaderboard();
-
-    document.getElementById("finish-game").style.display = "flex";
-  } else {
-    document.getElementById("finish-message").style.display = "block";
+function nextQuestion() {
+  if (currentQuestion === questions.length-2) {
+    document.getElementById("next").style.display = "none";
+    document.getElementById("finish").style.display = "initial";
   }
-  
+  currentQuestion++;
+  loadQuestion();
 }
 
 /**
@@ -242,12 +216,12 @@ function saveLeaderboard() {
     currentLeaderboard = JSON.parse(leaderboard);
   }
 
-  if (currentLeaderboard.length >= GAME_LIMIT && score.points > currentLeaderboard[currentLeaderboard.length-1].points) {
+  if (currentLeaderboard.length >= GAME_LIMIT && player.points > currentLeaderboard[currentLeaderboard.length-1].points) {
     currentLeaderboard.pop();
   }
 
   if (currentLeaderboard.length < GAME_LIMIT) {
-    currentLeaderboard.push(score);
+    currentLeaderboard.push(player);
     currentLeaderboard.sort((a, b) => b.points - a.points);
     localStorage.setItem("leaderboard", JSON.stringify(currentLeaderboard));
     leaderboard = localStorage.leaderboard;
@@ -255,19 +229,36 @@ function saveLeaderboard() {
 }
 
 /**
- * Check if the option selected by the user is correct and in this case increases the score.
- * Calls the function saveCurrentGame to save the users choice.
- * Calls the function displayAnswer to show the correct/incorrect options.
- * Calls the function updateScore to display the user's current score
- * @param {element} answer - The option selected by the user
+ * Finishes the game. Check the score to present a personalised image and message.
+ * Calls the saveLeaderboard function to add the game to the leaderboard.
  */
-function checkAnswer(answer) {
-  saveCurrentGame(answer.value);
-  displayAnswer();
-  if (answer.value === questions[currentQuestion].correct) {
-    score.points++;
+function finishGame() {
+  if (isGameCompleted()) {
+    document.getElementById("questions-game").style.display = "none";
+
+    let resultMessage = document.getElementById("result-message");
+    let resultImage = document.getElementById("result-image");
+
+    resultMessage.innerHTML = "<p>You got " + player.points + " points out of " + GAME_LIMIT + "!</p>";
+
+    if (player.points >= 0 && player.points <= (GAME_LIMIT / 3)) {
+      resultMessage.innerHTML += "<p>I think you might have misunderstood the type of rock we are talking about.</p>";
+      resultImage.style.backgroundImage = "url('assets/images/low.jpg')";
+    } else if (player.points > (GAME_LIMIT / 3) && player.points <= (GAME_LIMIT - 3)) {
+      resultMessage.innerHTML += "<p>As AC/DC would say: <em>'It's a long way to the top if you wanna rock n' roll'</em>, but you're getting there.</p>";
+      resultImage.style.backgroundImage = "url('assets/images/medium.jpg')";
+    } else {
+      resultMessage.innerHTML += "<p>Well, well... We have a rockstar here. Congratulations!</p>";
+      resultImage.style.backgroundImage = "url('assets/images/high.jpg')";
+    }
+
+    saveLeaderboard();
+
+    document.getElementById("finish-game").style.display = "flex";
+  } else {
+    document.getElementById("finish-message").style.display = "block";
   }
-  updateScore();
+  
 }
 
 /**
@@ -282,7 +273,23 @@ function saveCurrentGame(choice) {
  * Update the screen with the user's current score
  */
 function updateScore() {
-  document.getElementById("score").innerHTML = "Score: " + score.points + "/" + questions.length;
+  document.getElementById("score").innerHTML = "Score: " + player.points + "/" + questions.length;
+}
+
+/**
+ * Check if the option selected by the user is correct and in this case increases the score.
+ * Calls the function saveCurrentGame to save the users choice.
+ * Calls the function displayAnswer to show the correct/incorrect options.
+ * Calls the function updateScore to display the user's current score
+ * @param {element} answer - The option selected by the user
+ */
+function checkAnswer(answer) {
+  saveCurrentGame(answer.value);
+  displayAnswer();
+  if (answer.value === questions[currentQuestion].correct) {
+    player.points++;
+  }
+  updateScore();
 }
 
 /**
